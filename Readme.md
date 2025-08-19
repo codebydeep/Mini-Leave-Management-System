@@ -30,9 +30,6 @@ A RESTful APIs for managing Employee and leaves built with **Node.js**, **Expres
 1. **Clone the repository**
    ```bash
    git clone https://github.com/codebydeep/Mini-Leave-Management-System.git
-
-   cd mini-leave-management-system
-
    ```
 
 2. **Install all the dependencies**
