@@ -22,7 +22,7 @@ app.use(express.urlencoded({
 
 // Routes - 
 app.use("/api/v1", healthCheckRoutes);
-app.use("/api/v1", employeeRoutes);
-app.use("/api/v1", leaveRoutes);
+app.use("/api/v1/employees", employeeRoutes);
+app.use("/api/v1/leave", leaveRoutes);
 
 export default app;

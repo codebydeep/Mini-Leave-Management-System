@@ -23,7 +23,7 @@ const addEmployee = asyncHandler(async(req, res) => {
         )
     }
 
-    const existingEmployee = await Employee.findOne({name, email});
+    const existingEmployee = await Employee.findOne({email});
 
     if(existingEmployee){
         throw new ApiError(

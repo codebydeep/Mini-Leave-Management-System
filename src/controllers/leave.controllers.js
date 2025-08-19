@@ -33,8 +33,30 @@ const applyLeave = asyncHandler(async(req, res) => {
         )
     }
 
+    if(employee.leaveBalance < 1){
+        throw new ApiError(
+            400,
+            "Leave balance not enough to take leave"
+        )
+    }
+
     const formatStartDate = dayjs(startDate, "DD-MM-YYYY").toDate();
     const formatEndDate = dayjs(endDate, "DD-MM-YYYY").toDate();
+
+    if(formatStartDate < employee.joiningDate){
+        throw new ApiError(
+            400,
+            "Before Joining date cannot apply leave"
+        )
+    }
+    
+    if(formatStartDate > formatEndDate){
+        throw new ApiError(
+            400,
+            "Start date cannot be greater than end date"
+        )
+    }
+
 
     const leave = await Leave.create({
         employee: employeeId,
