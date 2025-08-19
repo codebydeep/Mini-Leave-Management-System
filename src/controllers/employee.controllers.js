@@ -42,8 +42,6 @@ const addEmployee = asyncHandler(async(req, res) => {
         leaveBalance
     })
 
-    // await employee.save({validateBeforeSave: false});
-
     res.status(201).json(
         new ApiResponse(
             201,
@@ -56,7 +54,7 @@ const addEmployee = asyncHandler(async(req, res) => {
 const getEmployee = asyncHandler(async(req, res) => {
     const id = req.params.id;
 
-    const employee = await Employee.findById(id);
+    const employee = await Employee.findById(id).select("-_id -createdAt -updatedAt -__v");
 
     if(!employee){
         throw new ApiError(

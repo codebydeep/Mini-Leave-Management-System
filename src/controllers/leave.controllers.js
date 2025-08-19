@@ -107,7 +107,7 @@ const approveLeave = asyncHandler(async(req, res) => {
                 name: leave.employee.name,
                 email: leave.employee.email,
                 department: leave.employee.department,
-                remainingLeave: leave.employee.leaveBalance
+                remainingLeaves: leave.employee.leaveBalance
             },
             "Leave approved successfully"
         )
@@ -146,7 +146,7 @@ const rejectLeave = asyncHandler(async(req, res) => {
     res.status(200).json(
         new ApiResponse(
             200,
-            leave,
+            {},
             "Leave rejected successfully"
         )
     )
