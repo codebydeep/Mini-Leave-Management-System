@@ -1,0 +1,19 @@
+{
+  "name": "mini-leave-management-system",
+  "version": "1.0.0",
+  "description": "A mini Leave Management System for employees",
+  "license": "ISC",
+  "author": "deepansh",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.2",
+    "nodemon": "^3.1.10"
+  }
+}
