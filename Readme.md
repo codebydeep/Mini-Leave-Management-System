@@ -116,8 +116,11 @@ A RESTful APIs for managing Employee and leaves built with **Node.js**, **Expres
 ![ApplyforaLeave](./public/images/Screenshot%202025-08-19%20210758.png)
 5. Approve Leave for Employee
 ![ApproveLeaveforanEmployee](./public/images/Screenshot%202025-08-19%20210832.png)
-6. Reject Leave for Employee
+6. Reject Leave for Employee - 
+If a Approved Leave request was send-
 ![RejectLeaveforanEmployee](./public/images/Screenshot%202025-08-19%20210918.png)
+If a Pending Leave request was send-
+![RejectLeaveforanEmployee](./public/images/Screenshot%202025-08-19%20212635.png)
 ---
 
 ## Future Improvements-
@@ -125,3 +128,4 @@ A RESTful APIs for managing Employee and leaves built with **Node.js**, **Expres
 - **Redis** for caching if traffic increases, to improve performance.
 - Implement an User Authentication based on Admin/Employee.
 - Implement a Rate-limiting to an API Endpoints for frequent requests.
+---
