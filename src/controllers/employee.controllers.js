@@ -53,4 +53,50 @@ const addEmployee = asyncHandler(async(req, res) => {
     )
 });
 
-export { addEmployee };
+const getEmployee = asyncHandler(async(req, res) => {
+    const id = req.params.id;
+
+    const employee = await Employee.findById(id);
+
+    if(!employee){
+        throw new ApiError(
+            404,
+            "Employee not found"
+        )
+    }
+
+    res.status(200).json(
+        new ApiResponse(
+            200,
+            employee,
+            "Employee fetched successfully"
+        )
+    )
+});
+
+const getLeaveBalance = asyncHandler(async(req, res) => {
+    const id = req.params.id;
+
+    const employee = await Employee.findById(id);
+
+    if(!employee){
+        throw new ApiError(
+            404,
+            "Employee not found"
+        )
+    }
+
+    const leaveBalance = employee.leaveBalance;
+
+    res.status(200).json(
+        new ApiResponse(
+            200,
+            { 
+                "leaveBalance": leaveBalance
+            },
+            "Leave balance fetched successfully"
+        )
+    )
+});
+
+export { addEmployee, getEmployee, getLeaveBalance };
