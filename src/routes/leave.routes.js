@@ -4,7 +4,7 @@ import { applyLeave, approveLeave, rejectLeave } from "../controllers/leave.cont
 const leaveRoutes = Router();
 
 leaveRoutes.post("/apply-leave/:id", applyLeave);
-leaveRoutes.post("/approve-leave/:id", approveLeave);
-leaveRoutes.post("/reject-leave/:id", rejectLeave);
+leaveRoutes.patch("/approve-leave/:id", approveLeave);
+leaveRoutes.patch("/reject-leave/:id", rejectLeave);
 
 export default leaveRoutes;

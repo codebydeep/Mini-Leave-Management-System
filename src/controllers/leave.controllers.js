@@ -106,7 +106,7 @@ const approveLeave = asyncHandler(async(req, res) => {
 
     const totalDays = dayjs(leave.endDate).diff(dayjs(leave.startDate), "days") + 1;
 
-    if(leave.employee.leaveBalance < totalDays || leave.employee.leaveBalance === 0){
+    if(leave.employee.leaveBalance < totalDays){
         throw new ApiError(
             400,
             "Leave balance is not enough || No leave Remaining this month"
@@ -126,10 +126,10 @@ const approveLeave = asyncHandler(async(req, res) => {
         new ApiResponse(
             200,
             {
-                name: leave.employee.name,
-                email: leave.employee.email,
-                department: leave.employee.department,
-                remainingLeaves: leave.employee.leaveBalance
+                name: employee.name,
+                email: employee.email,
+                department: employee.department,
+                remainingLeaves: employee.leaveBalance
             },
             "Leave approved successfully"
         )
