@@ -92,7 +92,7 @@ const getLeaveBalance = asyncHandler(async(req, res) => {
         new ApiResponse(
             200,
             { 
-                "leaveBalance": leaveBalance
+                "leaveBalance": `${leaveBalance} days`
             },
             "Leave balance fetched successfully"
         )

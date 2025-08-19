@@ -3,6 +3,7 @@ import cors from "cors";
 
 import healthCheckRoutes from "./routes/health-check.routes.js";
 import employeeRoutes from "./routes/employee.routes.js";
+import leaveRoutes from "./routes/leave.routes.js";
 
 const app = express();
 
@@ -22,5 +23,6 @@ app.use(express.urlencoded({
 // Routes - 
 app.use("/api/v1", healthCheckRoutes);
 app.use("/api/v1", employeeRoutes);
+app.use("/api/v1", leaveRoutes);
 
 export default app;
