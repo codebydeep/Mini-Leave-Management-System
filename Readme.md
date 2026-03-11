@@ -8,7 +8,7 @@ A RESTful APIs for managing Employee and leaves built with **Node.js**, **Expres
 - An Employee can apply for a leave
 - Apply or Reject leave for Employee
 - Fetching leave-balance for an Employee
-Add features update via Dev branch
+- Made for an organisation asked for creating a demo Projet
 ---
 
 ## 🛠 Tech Stack
